@@ -5,23 +5,23 @@ using namespace std;
 class Animal{
 protected:
     string especie;
-    string clasificacion;
+    int edad;
 public:
     Animal();
-    Animal(string especie_,string clasificacion_){
+    Animal(string especie_,int edad_){
         this -> especie= especie_;
-        this -> clasificacion=clasificacion_;
+        this -> edad=edad_;
     }
     void getDatos(){
         cout << "Ingrese la especie: ";
         cin >> especie;
         if(especie=="persona" || especie=="objeto"){cout <<"No es un animal";}
 
-        cout << "Ingrese la clasificacion (mamiforo, hervivoro, ..) : ";
-        cin >> clasificacion;
+        cout << "Ingrese la edad : ";
+        cin >> edad;
     }
     void imprimeDatos(){
-        cout << "su especie es " <<especie <<" su clasificacion es "<<clasificacion;
+        cout << "su especie es " <<especie <<" su edad es "<<edad;
     }
 
 };
@@ -31,8 +31,8 @@ class Perro: public Animal
 private:
     string raza;
 public:
-    Perro(string _especie,string _clasificacion,string _raza):
-        Animal(_especie, _clasificacion), raza(_raza){}
+    Perro(string _especie,int _edad,string _raza):
+        Animal(_especie, _edad), raza(_raza){}
     void ingreseRaza(){
         cout << "Ingrese la raza: ";
         cin >>raza;
@@ -47,35 +47,33 @@ class Gato: public Animal
 {
 private:
     string raza;
-    int nacimiento;
 public:
-    Perro(string _especie,string _clasificacion,string _raza, int _nacimiento):
-        Animal(_especie, _clasificacion), raza(_raza), nacimiento(_nacimiento){}
+    Gato(string _especie,int _edad,string _raza):
+        Animal(_especie, _edad), raza(_raza){}
     void ingreseRaza(){
         cout << "Ingrese la raza: ";
         cin >>raza;
         }
-    void ingreseNacimiento(){
-        cout << "Ingrese el nacimiento: ";
-        cin >>nacimiento;
-    }
-    string imprimeRaza()
+    void imprimeRaza()
     {
-        return raza;
+        cout << "La raza es "<< raza;
     }
 
 };
 
 int main()
 {
-    Animal desc();
+    Animal desc("desconocido", 0);
     desc.getDatos();
     desc.imprimeDatos();
 
-    Perro p();
+    Perro p("perro", 12,"buldog" );
     p.ingreseRaza();
     p.imprimeRaza();
 
+    Gato g("gato", 12, "");
+    g.ingreseRaza();
+    g.imprimeRaza();
 
 
     return 0;
