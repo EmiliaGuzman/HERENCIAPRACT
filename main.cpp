@@ -29,51 +29,43 @@ public:
 class Perro: public Animal
 {
 private:
-    string raza;
+    string ladrar;
 public:
-    Perro(string _especie,int _edad,string _raza):
-        Animal(_especie, _edad), raza(_raza){}
-    void ingreseRaza(){
-        cout << "Ingrese la raza: ";
-        cin >>raza;
+    Perro(string _especie,int _edad,string _ladrar):
+        Animal(_especie, _edad), ladrar(_ladrar){}
+    string salidaLadrido(){
+        return "wof wof";
         }
-    void imprimeRaza()
-    {
-        cout << "La raza es "<< raza;
-    }
 };
 
 class Gato: public Animal
 {
 private:
-    string raza;
+    string maullar;
 public:
-    Gato(string _especie,int _edad,string _raza):
-        Animal(_especie, _edad), raza(_raza){}
-    void ingreseRaza(){
-        cout << "Ingrese la raza: ";
-        cin >>raza;
+    Gato(string _especie,int _edad,string _maullar):
+        Animal(_especie, _edad), maullar(_maullar){}
+    string salidaMaullido(){
+        return "miau miau";
         }
-    void imprimeRaza()
-    {
-        cout << "La raza es "<< raza;
-    }
 
 };
 
 int main()
 {
-    Animal desc("desconocido", 0);
-    desc.getDatos();
-    desc.imprimeDatos();
+    ///Animal desc("desconocido", 0);
+    ///desc.getDatos();
+    ///desc.imprimeDatos();
 
-    Perro p("perro", 12,"buldog" );
-    p.ingreseRaza();
-    p.imprimeRaza();
+    Perro p( );
+    p.getDatos();
+    p.imprimeDatos();
+    p.salidaLadrido();
 
-    Gato g("gato", 12, "");
-    g.ingreseRaza();
-    g.imprimeRaza();
+    Gato g();
+    g.getDatos();
+    g.imprimeDatos();
+    g.salidaMaullido();
 
 
     return 0;
