@@ -21,7 +21,7 @@ public:
         cin >> edad;
     }
     void imprimeDatos(){
-        cout << "su especie es " <<especie <<" su edad es "<<edad;
+        cout << "su especie es " <<especie <<" su edad es "<<edad<< endl;
     }
 
 };
@@ -53,19 +53,16 @@ public:
 
 int main()
 {
-    ///Animal desc("desconocido", 0);
-    ///desc.getDatos();
-    ///desc.imprimeDatos();
 
-    Perro p( );
+    Perro p( "", 0,"");
     p.getDatos();
     p.imprimeDatos();
-    p.salidaLadrido();
+    cout <<p.salidaLadrido();
 
-    Gato g();
+    Gato g("", 0, "");
     g.getDatos();
     g.imprimeDatos();
-    g.salidaMaullido();
+    cout << g.salidaMaullido();
 
 
     return 0;
